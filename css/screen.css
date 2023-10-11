@@ -34,7 +34,9 @@
     --global-color-neutral-900: #222222;
 
     /* global page settings */
-    --global-page-backgroundColor: var(--global-color-neutral-000);
+    --global-page-backgroundColor: #26D4EB;
+    --global-card-backgroundColor: #4CC4D4;
+    --global-footer-backgroundColor: #4CC4D4;
     --global-page-color: var(--global-color-neutral-900);
     --global-selection-backgroundColor: var(--global-color-primary-100);
 
@@ -68,14 +70,16 @@
     /*  = 72px */
 
     /* forms */
+    
+    
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --global-page-color: var(--global-color-neutral-050);
         --global-page-backgroundColor: var(--global-color-neutral-900);
     }
-}
+} */
 
 /*------------------------------------*\
 #GENERIC
@@ -89,6 +93,7 @@
 
 html {
     background-color: var(--global-page-backgroundColor);
+    /* background-color: #ABD4F4; */
     color: var(--global-page-color);
     font-size: 100%;
     line-height: 1.5;
@@ -100,6 +105,7 @@ html {
 
 body {
     margin: 0;
+    position: relative;
 }
 
 *,
@@ -507,7 +513,105 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+.c-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    background-color: var(--global-card-backgroundColor);
+    border-radius: 24px;
+    box-shadow: 0px 5px 13px -1px rgba(61, 77, 110, 1);
+    padding: 2rem 3rem;
+    width: 50%;
+    min-height: 28rem;
+}
+
+.c-joke {
+    width: 80%;
+    font-size: 1.5rem;
+}
+
+.c-footer {
+    background-color: var(--global-footer-backgroundColor);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-color: #61A4AD;
+}
+
+.c-splitter {
+    background-color: #61A4AD;
+}
+
+.c-button {
+    padding: 1rem 1.5rem;
+    background-color: #71C0CB;
+    border: 1px #7EA1A5 solid;
+    border-radius: 8px;
+}
+
+.c-joke-button {
+    margin: 0;
+
+}
+
+.c-loading {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin: 0 0 var(--global-whitespace);
+}
+
+.c-loading__placeholder {
+    background-color: var(--global-color-neutral-100);
+    height: 2rem;
+    width: 80%;
+    border-radius: .5rem;
+    opacity: .3;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.c-loading__placeholder::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(73, 52, 52, 0.63),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.c-disclaimer {
+    border: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
 
 /*------------------------------------*\
 #UTILITIES
@@ -518,6 +622,10 @@ input::placeholder {
     ---
     Utility classes to put specific colors onto elements
 */
+
+.u-hidden {
+    display: none;
+}
 
 .u-color-neutral-500 {
     color: var(--global-color-neutral-500);

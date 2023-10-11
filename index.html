@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Blockport - Sign in</title>
-    <meta name="description" content="This is my HTML5 boilerplate.">
+    <title>Dad Jokes - try to laugh</title>
+    <meta name="description" content="Get a random dad joke.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#e85e00">
 
@@ -20,19 +20,33 @@
 </head>
 
 <body>
-    <h1>
-        Random Dad Joke
-    </h1>
-    <p>
-        I bought shoes from a drug dealer once. I don't know what he laced them with, but I was tripping all day.
-    </p>
-    <p>
-        Generate new joke
-    </p>
-    <hr>
-    <p>
-        Dad jokes based on <a href="https://icanhazdadjoke.com/">icanhazdadjoke.com</a>
-    </p>
+    <div class="c-app">
+        <div class="c-card">
+            <h1 class="c-title">
+                Random Dad Joke
+            </h1>
+            <p class="c-joke js-joke-content">
+                I bought shoes from a drug dealer once. I don't know what he laced them with, but I was tripping all day.
+            </p>
+            <div class="c-loading js-loading-state u-hidden">
+                <span class="c-loading__placeholder"></span>
+                <span class="c-loading__placeholder"></span>
+                <span class="c-loading__placeholder"></span>
+                <!-- <span class="c-loading__placeholder"></span> -->
+            </div>
+            <button class="c-button js-joke-btn">
+                <p class="c-joke-button">
+                    Generate new joke
+                </p>
+            </button>
+        </div>  
+    </div>
+    <footer class="c-footer">
+        <hr class="c-splitter">
+        <p class="c-disclaimer">
+            Dad jokes based on <a href="https://icanhazdadjoke.com/">icanhazdadjoke.com</a>
+        </p>
+    </footer>
 </body>
 
 </html>
